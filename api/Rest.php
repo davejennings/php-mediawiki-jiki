@@ -67,6 +67,7 @@ class Rest
         CURLOPT_RETURNTRANSFER => 1,
         CURLOPT_USERAGENT => JIKI_USERAGENT,
         CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_HTTPHEADER => array
         (
           "Accept: application/json",
