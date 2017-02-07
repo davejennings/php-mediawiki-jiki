@@ -20,6 +20,10 @@ $jikiExtraParams = array
     array("param"=>"myParamNameInWiki","jql"=>"\"My Field Name in JIRA\""),
   );
 ```
+Optionally define another field to use in place of description for the full details view (has to come before require of Jiki.php file in LocalSettings.php)
+```php
+$jikiFullDetailsField = "customfield_10800";
+```
 Basic Use
 =========
 In any wiki page include the following tag:

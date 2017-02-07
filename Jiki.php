@@ -67,6 +67,14 @@ $wgAutoloadClasses['Hypertext'] = __DIR__ . '/view/Hypertext.php';#Allows to dis
 $wgAutoloadClasses['JQL'] = __DIR__ . '/util/JQL.php';#JQL Helper functions
 $wgAutoloadClasses['JIRA'] = __DIR__ . '/util/JIRA.php';#JIRA Helper functions
 
+global $jikiFullDetailsField;
+if (!isset($jikiFullDetailsField))
+{
+//  $jikiFullDetailsField = "description";
+}
+
+define("JIKI_FULL_DETAILS_FIELD", $jikiFullDetailsField);
+
 function jikiSetHook($parser)
 {
   $parser->setHook("jira","jikiRender");

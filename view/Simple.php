@@ -34,7 +34,7 @@ class Simple
       }
       if(isset($args["renderDetails"])&&$args["renderDetails"]===true)
       {
-        $renderedView.= "<br/>  {$issue["fields"]["description"]}";
+        $renderedView.= "<br/>  {$issue["fields"][JIKI_FULL_DETAILS_FIELD]}";
       }
       $renderedView.= "<br/>";#Newline is not clean
     }

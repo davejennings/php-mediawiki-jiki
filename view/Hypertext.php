@@ -66,7 +66,7 @@ class Hypertext
       }
       if(isset($args["renderDetails"])&&$args["renderDetails"]===true)
       {
-        $renderedView.= "<br/><div style=\"text-indent: 20px;\">{$issue["renderedFields"]["description"]}</div>";
+        $renderedView.= "<br/><div style=\"text-indent: 20px;\">{$issue["renderedFields"][JIKI_FULL_DETAILS_FIELD]}</div>";
       }
       $renderedView.= "<br/>";
     }
