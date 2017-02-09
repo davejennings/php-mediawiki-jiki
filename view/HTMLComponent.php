@@ -78,7 +78,7 @@ class HTMLComponent
                     $renderedView .= "<strong>" . $issue["key"] . "</strong> ";
 
                     if ($wgUser->isLoggedIn()) {
-                        $renderedView.= "<a href=\"".JIRA::getIssueURL($data["host"],$issue["key"])."\" target=\"_BLANK\">{$issue["fields"]["summary"]}</a> ";
+                        $renderedView.= "<a href=\"".JIRA::getIssueURL($data["host"],$issue["key"])."\">{$issue["fields"]["summary"]}</a> ";
                     } else {
                         $renderedView .= "<span style=\"color: #0645ad\">" . $issue["fields"]["summary"] . "</span> ";
                     }
@@ -123,7 +123,7 @@ class HTMLComponent
             $renderedView .= "<strong>No issues found</strong><br /><br />";
         }
         if (isset($args["renderLink"]) && $args["renderLink"] === true && $wgUser->isLoggedIn()) {
-            $renderedView .= "<a href =\"" . JIRA::getFilterURL($data["host"],$data["jql"]) . "\" target=\"_BLANK\">View in JIRA</a>";
+            $renderedView .= "<a href =\"" . JIRA::getFilterURL($data["host"],$data["jql"]) . "\">View in JIRA</a>";
         }
 
         return $renderedView;
