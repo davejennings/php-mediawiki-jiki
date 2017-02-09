@@ -62,6 +62,7 @@ $wgAutoloadClasses['Rest'] = __DIR__ . '/api/Rest.php';#Calls JIRA REST API
 #Import View Handlers
 $wgAutoloadClasses['Simple'] = __DIR__ . '/view/Simple.php';#Allows to display in plain text
 $wgAutoloadClasses['Hypertext'] = __DIR__ . '/view/Hypertext.php';#Allows to display in HTML
+$wgAutoloadClasses['HTMLComponent'] = __DIR__ . '/view/HTMLComponent.php';#Allows to display in HTML with issues grouped by component
 
 #Import Utilities
 $wgAutoloadClasses['JQL'] = __DIR__ . '/util/JQL.php';#JQL Helper functions
@@ -135,6 +136,13 @@ function jikiRender($input,$args,$parser)
   {
     switch(strtolower($jikiFormat))
     {
+      case "html_component":
+      {
+        $htmlComponent = new HTMLComponent;
+        $jikiDataContainer = $htmlComponent->sort($jikiDataContainer);
+        $jikiOutput = $htmlComponent->getRenderedView($jikiDataContainer,$jikiRenderArgs);
+        break;
+      }
       case "html":
       {
         $jikiOutput = Hypertext::getRenderedView($jikiDataContainer,$jikiRenderArgs);

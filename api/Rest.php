@@ -7,7 +7,7 @@ if(!defined("MEDIAWIKI"))
 define("JIKI_USERAGENT","JIKI via MediaWiki");
 define("JIKI_REST_ENDPOINT","/rest/api/2/search");
 define("JIKI_REST_EXPAND","names,renderedFields");
-define("JIKI_REST_FIELDS","summary,description,issuetype,fixVersions,status," . JIKI_FULL_DETAILS_FIELD);
+define("JIKI_REST_FIELDS","summary,description,issuetype,fixVersions,status,components," . JIKI_FULL_DETAILS_FIELD);
 define("JIKI_REST_MAXRESULTS","250");
 /**
  * interract with JIRA REST API
